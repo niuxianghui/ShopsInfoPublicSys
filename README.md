@@ -26,3 +26,6 @@ a project homework of zzu
 * 牛向辉：建立项目，开始顶层设计，并搭建项目。
 
 > 采用前后端分离的设计方案，前端采用React框架并使用对React实现的Antd UI组件库，后端采用java语言编写，使用SpringBoot框架及各模块，数据库为Mysql，部署到Azure云上。
+
+* Create project on IDEA and import dependencies.
+
