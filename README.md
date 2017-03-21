@@ -31,4 +31,4 @@ a project homework of zzu
 前后端交互方式：前端调后端REST API，返回json格式数据
 
 * Create project on IDEA and import dependencies.
-
+* add module to access database;
