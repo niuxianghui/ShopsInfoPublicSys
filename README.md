@@ -32,3 +32,7 @@ a project homework of zzu
 
 * Create project on IDEA and import dependencies.
 * add module to access database;
+
+#### 2017.3.26
+* 李轩安排任务半个月后毫无进度，联系不上。
+* 联系夏天两次未答复。
