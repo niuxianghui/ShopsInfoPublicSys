@@ -10,4 +10,5 @@ import java.util.List;
  */
 public interface MerchantRepository extends JpaRepository<Merchant, Long> {
     List<Merchant> findByUserName(String userName);
+    List<Merchant> findByCategory(String category);
 }

@@ -19,6 +19,8 @@ public class Good implements Serializable{
     @Column(name = "merchant_id", nullable = false)
     private Long merchantId;
 
+
+
     public Long getId() {
         return id;
     }

@@ -14,6 +14,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
+import java.util.List;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @WebAppConfiguration
@@ -40,5 +42,9 @@ public class ZzuApplicationTests {
 		good1.setMerchantId(merchantRepository.findByUserName("merchant1").get(0).getId());
 		goodRepository.save(good1);
 	}
-
+	@Test
+	public void testMerchetGet(){
+		List<Merchant> merchantList = merchantRepository.findByCategory("life");
+		System.out.println("hello");
+	}
 }

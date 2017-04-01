@@ -6,6 +6,7 @@ import java.io.Serializable;
 /**
  * Created by niuxianghui on 17/3/21.
  */
+
 @Entity
 public class Merchant implements Serializable{
     @Id
@@ -24,6 +25,8 @@ public class Merchant implements Serializable{
 
     @Column(name = "merchant_passwd", nullable = false)
     private String passWd;
+
+    private String category;
 
     public Long getId() {
         return id;
@@ -63,5 +66,13 @@ public class Merchant implements Serializable{
 
     public void setPassWd(String passWd) {
         this.passWd = passWd;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 }
