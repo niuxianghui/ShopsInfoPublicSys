@@ -14,6 +14,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
+import javax.security.sasl.SaslServer;
 import java.util.List;
 
 @RunWith(SpringRunner.class)
@@ -46,5 +47,11 @@ public class ZzuApplicationTests {
 	public void testMerchetGet(){
 		List<Merchant> merchantList = merchantRepository.findByCategory("life");
 		System.out.println("hello");
+	}
+
+	@Test
+	public void testusr(){
+		String pass = userRepository.findByUserName("niu").get(0).getPassWd();
+		System.out.println(pass);
 	}
 }
