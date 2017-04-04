@@ -23,4 +23,10 @@ public class MerchantController {
         List<Merchant> merchantList = merchantRepository.findByCategory(category);
         return merchantList;
     }
+
+    @RequestMapping("/getMerchantById")
+    public Merchant getMerchantById(@RequestParam(value = "id", required = true)long id){
+        Merchant merchant = merchantRepository.findOne(id);
+        return merchant;
+    }
 }

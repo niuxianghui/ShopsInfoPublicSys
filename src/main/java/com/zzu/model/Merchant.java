@@ -23,6 +23,9 @@ public class Merchant implements Serializable{
     @Column(name = "merchant_user_name", nullable = false)
     private String userName;
 
+    @Column(name = "phoneNumber")
+    private String phoneNumber;
+
     @Column(name = "merchant_passwd", nullable = false)
     private String passWd;
 
@@ -74,5 +77,13 @@ public class Merchant implements Serializable{
 
     public void setCategory(String category) {
         this.category = category;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 }

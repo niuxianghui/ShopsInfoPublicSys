@@ -10,15 +10,17 @@ import java.io.Serializable;
 public class Good implements Serializable{
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    @Column(name = "good_id")
     private Long id;
 
-    @Column(name = "good_introduction")
+    private double price;
+
     private String introduction;
 
-    @Column(name = "merchant_id", nullable = false)
+    private String name;
+
     private Long merchantId;
 
+    private String key;
 
 
     public Long getId() {
@@ -29,6 +31,14 @@ public class Good implements Serializable{
         this.id = id;
     }
 
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
     public String getIntroduction() {
         return introduction;
     }
@@ -37,11 +47,27 @@ public class Good implements Serializable{
         this.introduction = introduction;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public Long getMerchantId() {
         return merchantId;
     }
 
     public void setMerchantId(Long merchantId) {
         this.merchantId = merchantId;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
     }
 }
