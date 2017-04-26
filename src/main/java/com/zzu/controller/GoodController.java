@@ -1,11 +1,11 @@
 package com.zzu.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.zzu.model.Good;
 import com.zzu.repository.GoodRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -24,5 +24,29 @@ public class GoodController {
             item.setKey(item.getId().toString());
         }
         return goods;
+    }
+
+    @RequestMapping(value = "/good/{id}", method = RequestMethod.PATCH)
+    public Object patchGood(@PathVariable(value = "id")Long id, @RequestBody String value){
+        Good good = goodRepository.findOne(id);
+        Good newGood = JSON.parseObject(value, Good.class);
+        good.setIntroduction(newGood.getIntroduction());
+        good.setName(newGood.getName());
+        good.setPrice(newGood.getPrice());
+        goodRepository.save(good);
+        return JSON.parse("{code: 200, msg: 'success.', id: " + good.getMerchantId() + "}");
+    }
+
+    @RequestMapping(value = "/good", method = RequestMethod.PUT)
+    public Object createGood(@RequestBody String value){
+        Good good = JSON.parseObject(value, Good.class);
+        goodRepository.save(good);
+        return JSON.parse("{code: 200, msg: 'success.'}");
+    }
+
+    @RequestMapping(value = "/good/{id}", method = RequestMethod.DELETE)
+    public Object deleteGood(@PathVariable(value = "id")Long id) {
+        goodRepository.delete(id);
+        return JSON.parse("{code: 200, msg: 'success.'}");
     }
 }

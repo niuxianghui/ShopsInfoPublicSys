@@ -9,6 +9,6 @@ import java.util.List;
  * Created by niuxianghui on 17/3/21.
  */
 public interface MerchantRepository extends JpaRepository<Merchant, Long> {
-    List<Merchant> findByUserName(String userName);
+    Merchant findByUserName(String userName);
     List<Merchant> findByCategory(String category);
 }

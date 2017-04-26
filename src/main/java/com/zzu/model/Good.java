@@ -20,8 +20,8 @@ public class Good implements Serializable{
 
     private Long merchantId;
 
+    @Column(name = "goodkey")
     private String key;
-
 
     public Long getId() {
         return id;
